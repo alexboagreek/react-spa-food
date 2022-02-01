@@ -21,11 +21,11 @@ function App() {
                   <Route exact path='/'>
                       <Home />
                   </Route>
-                  <Route path='/about' component={About} />
-                  <Route path='/contacts' component={Contact} />
-                  <Route path='/category/:name' component={Category} />
-                  <Route path='/meal/:id' component={Recipe} />
-                  <Route component={NotFound} />
+                  <Route path='/about' component={ About } />
+                  <Route path='/contacts' component={ Contact } />
+                  <Route path='/category/:name' component={ Category } />
+                  <Route path='/meal/:id' component={ Recipe } />
+                  <Route component={ NotFound } />
               </Switch>
           </main>
         <Footer />
