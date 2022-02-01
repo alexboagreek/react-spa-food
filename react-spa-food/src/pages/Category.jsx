@@ -6,6 +6,7 @@ import { Preloader } from '../components/Preloader';
 import { MealList } from '../components/MealList';
 
 function Category() {
+    
     const { name } = useParams();
     const [meals, setMeals] = useState([]);
     const { goBack } = useHistory();
