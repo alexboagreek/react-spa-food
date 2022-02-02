@@ -16,24 +16,26 @@ function Home() {
     const handleSearch = (str) => {
         setFilteredCatalog(
             catalog.filter((item) => 
-               item.strCategory.toLowercase().includes(str.toLowercase())
+               item.strCategory.toLowerCase().includes(str.toLowerCase())
             )
         );
         push({
             pathname,
             search: `?search=${str}`
-        })
+        });
     };
 
     useEffect(() => {
-        getAllCategories().then(data => {
+        getAllCategories().then((data) => {
             setCatalog(data.categories);
-            setFilteredCatalog( search ? 
-                data.categories.filter((item) =>
-                 item.strCategory
-                 .toLowercase()
-                 .includes(search.split('=')[1].toLowerCase())
-                ) : data.categories
+            setFilteredCatalog( 
+                search 
+                ? data.categories.filter((item) =>
+                  item.strCategory
+                    .toLowerCase()
+                    .includes(search.split('=')[1].toLowerCase())
+                ) 
+                : data.categories
             );
         });
     
@@ -48,7 +50,7 @@ function Home() {
                 <CategoryList catalog = { filteredCatalog } />
             )}
         </>
-    )
+    );
       
 }
 
