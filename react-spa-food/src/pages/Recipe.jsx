@@ -15,10 +15,34 @@ function Recipe() {
 
     return  (
         <>
-          <button className='btn' onClick={ goBack }>Go Back</button>
+          
+          {!recipe.idMeal ? <Preloader /> :  (
+            <div className="recipe">
+               <img src={ recipe.strMealThumb } alt={ recipe.strMeal } />
+               <h1>{ recipe.strMeal }</h1>
+               <h6>Category: { recipe.strCategory }</h6>
+               { recipe.strArea ? <h6>Area: { recipe.strArea }</h6> : null }
+               <p>{ recipe.strInstructions }</p>
+               { recipe.strYoutube ? (
+                   <div className="row">
+                       <h5>Video Recipe</h5>
+                       <iframe 
+                            title={id} 
+                            src={`https://www.youtube.com/embed/${recipe.strYoutube.slice(
+                                -11
+                            )}`}
+                            allowfullscreen
+
+                       />
+                   </div>
+               ) : null}
+            </div>
+            )}
+
+            <button className='btn' onClick={ goBack }>Go Back</button>
         </>
-    )
-    
+    );
+          
 }
 
 export { Recipe };
