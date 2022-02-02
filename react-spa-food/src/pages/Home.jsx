@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {useLocation, useHistory } from 'react-router-dom';
 import { getAllCategories } from "../api";
 import { Preloader } from '../components/Preloader';
 import { CategoryList } from '../components/CategoryList';

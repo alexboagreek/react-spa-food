@@ -19,6 +19,4 @@ function CategoryItem(props) {
       </div>
     </div>
 }
-export { 
-    CategoryItem
-}
+export { CategoryItem };
